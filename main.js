@@ -58,10 +58,10 @@ Timer.add = function (type, end, callback, condition_met) {
 }
 
 let World = new function () {
-    this.size = 5000;
+    this.size = 10000;
     this.center = {
-        x: 2500,
-        y: 2500
+        x: 5000,
+        y: 5000
     };
 }
 
