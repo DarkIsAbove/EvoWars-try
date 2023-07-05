@@ -67,6 +67,7 @@ let World = new function () {
 
 let Camera;
 window.onload = function () {
+    console.log("Oi...")
     canvas = document.createElement("canvas");
     context = canvas.getContext("2d");
 
