@@ -11,6 +11,23 @@ class Warrior {
 
         camera.minimap.include([this, mini_color]);
     }
+    
+    collideTo(object) {
+        return this.x + this.width > object.x &&
+              this.x < object.x + object.width &&
+              this.y + this.height > object.y &&
+              this.y < object.y + object.height;
+    }
+
+    expCollission() {
+        let exps = expGenerator.exps;
+        for (let i = 0; i < exps.length; i++) {
+            let exp = exps[i];
+            if (this.collideTo(exp)) {
+                exp.collect(this);
+            }
+        }
+    }
 
     draw() {
         if (!camera.inside(this)) return;

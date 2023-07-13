@@ -83,6 +83,9 @@ window.onload = function () {
     someguy = new Warrior(4000, 3000, 0, 0, player_size, player_size, "blue","violet");
     someguy2 = new Warrior(5000, 5000, 0, 0, player_size, player_size, "red", "blue");
 
+    expGenerator = new ExpGenerator();
+    generateExp();
+
     tracker = {
         x: 0,
         y: 0,  
@@ -105,6 +108,7 @@ function animate(current_time) {
     someguy.update();
     someguy2.update();
     player.update();
+    expGenerator.update();
     context.fillStyle = "red";
     context.fillRect(tracker.x, tracker.y, tracker.s, tracker.s);
     requestAnimationFrame(animate);

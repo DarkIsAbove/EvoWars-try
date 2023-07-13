@@ -42,6 +42,8 @@ class Player extends Warrior {
         //draw the player
         context.fillStyle = this.color;
         context.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
+        context.font = "10px Arial";
+        context.fillText(this.exp, 0, 100);
 
         //the players tiny sword
         context.save();
@@ -79,6 +81,8 @@ class Player extends Warrior {
     }
 
     update() {
+        this.expCollission();
+
         //obviously to draw the player
         this.draw();
 

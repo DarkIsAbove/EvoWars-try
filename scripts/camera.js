@@ -25,13 +25,18 @@ class Camera {
                     height: (object.height / World.size) * this.height
                 };
 
-                context.fillStyle = color;
+                context.fillStyle = object.mini_color || color;
                 context.fillRect(mini_object.x, mini_object.y, mini_object.width, mini_object.height);
             }
         }
 
-        this.minimap.include = function ([object, color]) {
-            this.objects.push([object, color]);
+        this.minimap.include = function (object) {
+            this.objects.push(object);
+        }
+
+        this.minimap.remove = function (object) {
+            let index = this.objects.indexOf(object);
+            this.objects.splice(index, 1);
         }
 
     }
